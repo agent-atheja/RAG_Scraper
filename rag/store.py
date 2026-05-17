@@ -63,9 +63,9 @@ def query(
         if topic_filter
         else None
     )
-    results = client.search(
+    response = client.query_points(
         collection_name=COLLECTION_NAME,
-        query_vector=query_embedding,
+        query=query_embedding,
         limit=top_k,
         query_filter=query_filter,
         with_payload=True,
@@ -81,7 +81,7 @@ def query(
             },
             "score": r.score,
         }
-        for r in results
+        for r in response.points
     ]
 
 
