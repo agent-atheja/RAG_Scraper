@@ -28,9 +28,13 @@ CHUNK_OVERLAP = 50
 EMBED_MODEL = os.getenv("EMBED_MODEL", "BAAI/bge-small-en-v1.5")
 EMBED_BATCH_SIZE = 64
 
-# --- Storage ---
+# --- Storage (local ChromaDB, used by migration script only) ---
 CHROMA_PATH = Path(os.getenv("CHROMA_DB_PATH", "./chroma_db"))
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "w3schools")
+
+# --- Qdrant (hosted vector DB for cloud deployment) ---
+QDRANT_URL = os.getenv("QDRANT_URL", "")
+QDRANT_API_KEY = os.getenv("QDRANT_API_KEY", "")
 
 # --- Servers ---
 FASTAPI_PORT = int(os.getenv("FASTAPI_PORT", "8000"))
