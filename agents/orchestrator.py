@@ -2,8 +2,9 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 
 from agents.state import AgentState, VALID_AGENTS
+from config import ANTHROPIC_API_KEY
 
-_llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0, max_tokens=10)
+_llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0, max_tokens=10, api_key=ANTHROPIC_API_KEY)
 
 _SYSTEM = """\
 You are the Orchestrator for a W3Schools knowledge assistant.

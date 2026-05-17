@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from sentence_transformers import SentenceTransformer
 
 from config import EMBED_BATCH_SIZE, EMBED_MODEL

@@ -2,9 +2,10 @@ from langchain_anthropic import ChatAnthropic
 from langchain_core.prompts import ChatPromptTemplate
 
 from agents.state import AgentState
+from config import ANTHROPIC_API_KEY
 from rag.retriever import build_rag_tool
 
-_llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0.1, max_tokens=1024)
+_llm = ChatAnthropic(model="claude-sonnet-4-6", temperature=0.1, max_tokens=1024, api_key=ANTHROPIC_API_KEY)
 
 _PERSONAS: dict[str, str] = {
     "python":     "You are a Python expert with deep knowledge of W3Schools Python tutorials.",

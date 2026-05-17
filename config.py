@@ -6,7 +6,6 @@ load_dotenv()
 
 # --- Scraping ---
 BASE_URL = "https://www.w3schools.com"
-SITEMAP_URL = "https://www.w3schools.com/sitemap/sitemap_www.xml"
 REQUEST_DELAY_MIN = 1.5
 REQUEST_DELAY_MAX = 3.0
 MAX_CONCURRENT = 5
