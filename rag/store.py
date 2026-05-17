@@ -8,6 +8,7 @@ from qdrant_client.models import (
     FieldCondition,
     Filter,
     MatchValue,
+    PayloadSchemaType,
     PointStruct,
     VectorParams,
 )
@@ -29,6 +30,11 @@ def get_client() -> QdrantClient:
                 collection_name=COLLECTION_NAME,
                 vectors_config=VectorParams(size=VECTOR_SIZE, distance=Distance.COSINE),
             )
+        _client.create_payload_index(
+            collection_name=COLLECTION_NAME,
+            field_name="topic",
+            field_schema=PayloadSchemaType.KEYWORD,
+        )
     return _client
 
 
